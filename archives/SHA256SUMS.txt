@@ -1,0 +1,3 @@
+fe56e5a4e77601caaaea931b51f4d9343da036dc6461ea8c371b402e3c65a7bd  chadian-post-project-v1.0.0.zip
+a8dbfd4c52327abd8c220210804977cf297118a7b93955e48ab73dd8be5bdc00  chadian-post-project-v2.0.0.zip
+34cf96e7b601776a20d41784e863dff23fa585f84aa1a60d5adc16006b1c5ed6  chadian-post-project.bundle
