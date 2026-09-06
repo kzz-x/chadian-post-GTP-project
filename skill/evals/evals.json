@@ -1,15 +1,20 @@
 {
   "skill_name": "chadian-post-production",
   "evals": [
-    {"id": 1, "prompt": "他们的120伏家庭用电，其实能一路追溯到140多年前……（素材）\n1882年，爱迪生在纽约建成第一座商用电站。", "expected_output": "应完成A阶段全文理解、镜头索引和分析卡，并停止；不搜索、不生成、不编码。", "files": []},
-    {"id": 2, "prompt": "展开03，这一镜做CGI，【风格：016】。", "expected_output": "只设计S03，按片段+视觉+016给完整静帧Prompt与视频Prompt；不实际生成。", "files": []},
-    {"id": 3, "prompt": "确认方案A。", "expected_output": "锁定当前方案，不进入C，不生成任何成果。", "files": []},
-    {"id": 4, "prompt": "找03素材，只找真实素材。", "expected_output": "只搜索S03真实候选/证据；不得AI补缺，不重新规划全片。", "files": []},
-    {"id": 5, "prompt": "设计封面，注意不是完全无字，而是不要大标题和乱七八糟的字。", "expected_output": "只做B：16:9与3:4独立构图、小字清单、两版完整Prompt；不生成底图。", "files": []},
-    {"id": 6, "prompt": "这个画面不好看，一眼AI。", "expected_output": "进入D，最多3个具体问题+影响+改法，列保留项；没有明确编辑指令时不重生。", "files": []},
-    {"id": 7, "prompt": "只改03的颜色，主体、构图和字体都别动。", "expected_output": "只修改颜色；主体、构图、字体持续锁定。", "files": []},
-    {"id": 8, "prompt": "我给你一个粗动效视频和文案，把它升级成最终CGI，先设计别直接生成。", "expected_output": "读取片段规则：分析真实可观察运动，区分运动参考与外观锚点，交静帧和视频Prompt并停在B。", "files": []},
-    {"id": 9, "prompt": "制作这个数据图动效，要能改数据、图层、关键帧、保存重开。", "expected_output": "进入C并按references/motion.md执行数据图与可编辑工程要求；不能用简单表单冒充完整可编辑工程，未实测功能标未测。", "files": []},
-    {"id": 10, "prompt": "继续。", "expected_output": "必须依据当前stage/object/authorized_scope解释‘继续’，不能把它理解成全片制作。", "files": []}
+    {"id":1,"prompt":"他们的120伏家庭用电，其实能一路追溯到140多年前……（素材）\n1882年，爱迪生在纽约建成第一座商用电站。","expected_output":"完成A全文理解、镜头索引和分析卡并停止；不搜索、不生成、不编码。若支持文件，应建立全文、镜头总表、状态总账和Sxx镜头文件。","files":[]},
+    {"id":2,"prompt":"展开03，这一镜做CGI，【风格：016】。","expected_output":"只设计S03，按片段+视觉+016给完整静帧Prompt与视频Prompt；不实际生成；有文件能力时更新S03镜头文件。","files":[]},
+    {"id":3,"prompt":"确认方案A。","expected_output":"锁定当前方案，不进入C，不生成；更新决策/状态。","files":[]},
+    {"id":4,"prompt":"找03素材，只找真实素材。","expected_output":"只搜索S03真实候选/证据；不得AI补缺，不重新规划全片。","files":[]},
+    {"id":5,"prompt":"设计封面，注意不是完全无字，而是不要大标题和乱七八糟的字。","expected_output":"只做B：16:9与3:4独立构图、小字清单、两版完整Prompt；不生成底图。","files":[]},
+    {"id":6,"prompt":"这个画面不好看，一眼AI。","expected_output":"进入D，最多3个具体问题+影响+改法，列保留项；没有明确编辑指令时不重生。","files":[]},
+    {"id":7,"prompt":"只改03的颜色，主体、构图和字体都别动。","expected_output":"只修改颜色；主体、构图、字体持续锁定，并更新镜头状态/决策。","files":[]},
+    {"id":8,"prompt":"我给你一个粗动效视频和文案，把它升级成最终CGI，先设计别直接生成。","expected_output":"分析真实可观察运动，区分运动参考与外观锚点，交静帧和视频Prompt并停在B。","files":[]},
+    {"id":9,"prompt":"制作这个数据图动效，要能改数据、图层、关键帧、保存重开。","expected_output":"进入C并按motion规则执行；不能用简单表单冒充完整可编辑工程，未实测功能标未测。","files":[]},
+    {"id":10,"prompt":"继续。","expected_output":"先恢复当前state/object/authorized_scope，再解释继续；不能理解成全片制作。","files":[]},
+    {"id":11,"prompt":"S03、S04、S06都展开设计，可以同步做。","expected_output":"只进入三个镜头的B；支持子Agent时冻结共享约束并并行设计，每个子Agent只拿自身镜头和必要reference；主Agent统一检查，不进入C。","files":[]},
+    {"id":12,"prompt":"按确认方案把S01、S02、S03一起制作。","expected_output":"只处理授权批次；无依赖且支持子Agent时可并行C，依赖链保持顺序；主Agent回读结果、统一验收并更新总账。","files":[]},
+    {"id":13,"prompt":"前面S01-S03都做完了，现在开始做剩下的。","expected_output":"读取PROJECT_STATE/SHOT_LEDGER/DECISIONS计算剩余集合，明确列出本批；不能凭聊天印象。尚未完成B的镜头不得自动越阶段，除非用户明确直接做。","files":[]},
+    {"id":14,"prompt":"这篇有15个镜头，先分析，后面我不想一直往上翻。","expected_output":"仍只做A；若支持文件，创建全文分析、镜头总表、PROJECT_STATE、SHOT_LEDGER、DECISIONS与15个shots/Sxx骨架，并在聊天暴露关键文件入口。","files":[]},
+    {"id":15,"prompt":"这三个镜头一起做，但你这里没有子agent。","expected_output":"保持同一授权批次和文件/状态契约，顺序执行；不能声称并行。","files":[]}
   ]
 }

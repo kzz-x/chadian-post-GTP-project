@@ -1,42 +1,56 @@
-# 差点后期 Project
+# 差点后期
 
-当前版本：**v2.0.0 · 分阶段逐镜头版**。
+当前版本：**v3.0.0 · 标准渐进式 Skill + GPT Project 镜像**。
 
-GitHub：[kzz-x/chadian-post-GTP-project](https://github.com/kzz-x/chadian-post-GTP-project)
+GitHub：`kzz-x/chadian-post-GTP-project`
 
-Google Drive：[差点后期_Project_版本管理](https://drive.google.com/drive/folders/1DKHPS34vwImUaJQ76d8_sgqCKySu1Br7)
-这是用户已反馈“刚刚测试了一下还行”的归档版本；该反馈不等同于全部回归用例或工程功能已验收。
+## 推荐使用方式
 
-## 使用
+### Agent / Skill 环境
 
-1. 将 `project/01_项目指令.md` 正文粘贴到 Project Instructions。
-2. 仅将 `project/来源/` 内10个Markdown上传为项目来源，并移除该Project内旧活动版本。
-3. 新聊天输入文案，先得到全文逻辑、镜头总览与逐镜头分析卡。
-4. “展开03”进入设计，“按确认方案制作03”才制作指定镜头。
+正式 Skill 位于 `skill/`：
 
-`project/02_使用说明与验收.md` 包含完整安装说明、分析示例和实测清单；其未运行标记保留原归档时状态。README、CHANGELOG、VERSION及历史归档均不用上传为Project来源。
+1. 以 `skill/SKILL.md` 为入口。
+2. 按当前阶段和任务只读需要的 `skill/references/`。
+3. 不预加载全部能力与18张风格卡。
+4. 多镜头B/C批量任务读取 `parallel-execution.md`；有子Agent时可并行，无则顺序执行。
+5. 长项目优先使用文件化工作区和状态总账，不依赖聊天记忆。
+
+仓库根 `SKILL.md` 只是 launcher。
+
+### ChatGPT GPT Project
+
+1. 将 `project/01_项目指令.md` 放入 Project Instructions。
+2. 上传 `project/来源/` 中的能力来源；风格优先使用 `project/来源/风格/000.md`～`017.md` 的拆分文件。
+3. `project/来源/【差点风格】.md` 仅为旧版兼容，正常运行不要和拆分风格一起全量读取。
+4. `project/模板/` 保存文件化项目状态模板，可用于长项目输出。
+
+## v3核心变化
+
+- **并行制作**：主Agent可在B/C阶段对互不依赖的多个镜头调子Agent同步设计/制作；共享约束由主Agent冻结，最终由主Agent统一验收。
+- **文件化交付**：全文分析、镜头总表、每个Sxx、实际成品都优先独立成文件，减少长聊天向上翻找。
+- **外置记忆**：`PROJECT_STATE.md`、`SHOT_LEDGER.md`、`DECISIONS.md`、`shots/Sxx.md` 保存真实进度。“开始做剩下的”先读总账计算剩余集合。
+- **Skill / Project同步**：`skill/` 是唯一真源；运行 `python scripts/sync_project_mirror.py` 同步，再运行 `python scripts/validate_sync.py` 校验。
+
+## 标准工作区
+
+```text
+00_全文分析.md
+01_镜头总表.md
+PROJECT_STATE.md
+SHOT_LEDGER.md
+DECISIONS.md
+shots/S01.md ...
+outputs/S01/ ...
+```
+
+宿主支持附件/Artifact/文件卡时，Agent应暴露当前变更文件供点击、预览或下载；具体显示在侧栏、旁边还是消息区域由宿主UI决定。
 
 ## 版本管理
 
-- `main`：当前文件；`VERSION`：明确版本号；`CHANGELOG.md`：每次变化及验证范围。
-- GitHub `versions/v1.0.0`：修改前历史快照，仅供对比，含已知问题。
-- GitHub `versions/v2.0.0`：本次逐镜头流程快照，12个Project文档与用户收到的v2逐字一致。
-- 后续只修措辞或小问题升级补丁号，例如2.0.1；新增能力升级次版本；改变核心交互或不兼容流程升级主版本。
-- 每次修改独立提交；经过约定检查后新增版本快照；版本分支按归档约定不移动，不覆盖历史ZIP。GitHub快照分支不是受平台锁定的标签。
-- 需要回退：从对应版本分支/提交取文件，或创建revert提交保留修改历史，不以强制推送重写历史。
+- `VERSION`：当前版本。
+- `CHANGELOG.md`：版本变化与未测范围。
+- `MAINTENANCE.md`：Skill→Project镜像维护规则。
+- `archives/`：历史归档，不参与正常运行。
 
-历史由实际保留的v1、v2文件建立，不伪造早期提交日期。由于当前连接不提供标签创建及原生Git推送，GitHub提交由文件快照重建，提交SHA与原本地记录不同；原始两个提交及 `v1.0.0`、`v2.0.0` 注释标签完整保存在 `archives/chadian-post-project.bundle`，网盘也有备份。GitHub的Tags/Releases尚未创建，版本入口使用上述快照分支。
-
-`archives/` 保存v1/v2安装包、原始Git bundle及校验清单；`project/SHA256SUMS.txt` 校验当前12份Project文档。恢复原始带标签历史可运行：
-
-```bash
-git clone archives/chadian-post-project.bundle restored-project
-```
-
-README中的仓库归档方式、链接更新不改变v2的Project指令和10份来源。
-
-## 验证与范围
-
-本版本已通过16项文件结构、内容保留及归档检查；18张风格卡专业正文保留。2026-09-05收到用户初步实测反馈“还行”，未提供逐项验收记录，因此12个行为回归用例仍待逐项记录。没有声称图像生成质量或HTML编辑功能已全面验收。
-
-本仓库用于个人工作资料归档；不附加开源许可证。建议GitHub使用Private。仓库已由用户创建为Private；本次上传保持此可见性。
+v3新增的15项行为eval目前已定义但尚未真实跑完 with-skill vs baseline，因此不能声称行为回归全部通过。
