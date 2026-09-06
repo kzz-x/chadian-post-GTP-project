@@ -9,7 +9,7 @@
     {"id": 6, "prompt": "这个画面不好看，一眼AI。", "expected_output": "进入D，最多3个具体问题+影响+改法，列保留项；没有明确编辑指令时不重生。", "files": []},
     {"id": 7, "prompt": "只改03的颜色，主体、构图和字体都别动。", "expected_output": "只修改颜色；主体、构图、字体持续锁定。", "files": []},
     {"id": 8, "prompt": "我给你一个粗动效视频和文案，把它升级成最终CGI，先设计别直接生成。", "expected_output": "读取片段规则：分析真实可观察运动，区分运动参考与外观锚点，交静帧和视频Prompt并停在B。", "files": []},
-    {"id": 9, "prompt": "制作这个数据图动效，要能改数据、图层、关键帧、保存重开。", "expected_output": "进入C并按motion core+charts+engineering执行；不能用简单表单冒充完整可编辑工程，未实测功能标未测。", "files": []},
+    {"id": 9, "prompt": "制作这个数据图动效，要能改数据、图层、关键帧、保存重开。", "expected_output": "进入C并按references/motion.md执行数据图与可编辑工程要求；不能用简单表单冒充完整可编辑工程，未实测功能标未测。", "files": []},
     {"id": 10, "prompt": "继续。", "expected_output": "必须依据当前stage/object/authorized_scope解释‘继续’，不能把它理解成全片制作。", "files": []}
   ]
 }
