@@ -16,7 +16,9 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 5. 已确认的画幅、主体身份、标题区、字体、媒介、构图、文字策略和未点名要改的部分持续锁定，直到用户明确撤销。
 6. 使用最短有效能力链。不要因为“可能有用”就加载全部references。
 7. 对话不是项目状态的唯一来源。平台支持文件时，使用项目状态文件和镜头文件保存进度；长对话、上下文压缩或重新进入任务时优先恢复这些文件。
-8. 多个互相独立的镜头在B或C阶段可并行处理；有子Agent/并行任务能力时按 `references/parallel-execution.md` 调度，没有时顺序执行同一批次并保持相同交付契约。\n9. **Reference First**：进入具体视觉、动效、封面、CGI、AI片段或复杂元素的B/C阶段时，先判断图片、视频、成熟动效、真实运动与可复用资产参考是否会显著降低返工；需要时先读 `references/reference-first.md`。A全文分析仍不外搜。
+8. 多个互相独立的镜头在B或C阶段可并行处理；有子Agent/并行任务能力时按 `references/parallel-execution.md` 调度，没有时顺序执行同一批次并保持相同交付契约。
+9. **Reference First**：进入具体视觉、动效、封面、CGI、AI片段或复杂元素的B/C阶段时，先判断图片、视频、成熟动效、真实运动与可复用资产参考是否会显著降低返工；需要时先读 `references/reference-first.md`。A全文分析仍不外搜。
+10. **AE Handoff**：`差点后期` 只负责判断镜头是否适合 AE、锁定表达目标/构图/参考/素材与阶段状态；一旦用户要求 AE 制作方案、工程搭建、MCP/JSX、关键帧/表达式、AE修改/调试/验收，必须转读 `kzz-x/XPIN-AE-SKILL`，由其中 `AGENTS.md` 路由 Mini / Full。不要用 `references/motion.md` 代替 AE Skill。
 
 ## 运行状态
 
@@ -40,11 +42,13 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 | 多镜头批量设计/制作、要求同步/并行、平台有子Agent能力 | `references/parallel-execution.md` |
 | 需要创建/更新可点击镜头文件、阶段文件、下载/预览交付 | `references/artifact-output.md` |
 | 恢复长对话状态、判断“剩下的”、更新项目总账/决策 | `references/project-state.md` |
-| 新视觉/动效/封面/CGI进入B/C，需要判断图片、视频、成熟动效、真实运动或可复用资产参考 | `references/reference-first.md` |\n| 不知道怎么画、构图、去AI味、已有图不好看、连续性 | `references/visual.md` |
+| 新视觉/动效/封面/CGI进入B/C，需要判断图片、视频、成熟动效、真实运动或可复用资产参考 | `references/reference-first.md` |
+| 不知道怎么画、构图、去AI味、已有图不好看、连续性 | `references/visual.md` |
 | 真实视频/图片、人物、产品、厂房、发布会、Logo、UI、事实证据 | `references/footage.md` |
 | 独立PNG、芯片、零件、道具、可拆资产 | `references/elements.md` |
 | 完整AI镜头、CGI、锚点、生视频、粗动效重渲染 | `references/clips.md` |
-| 参数、流程、结构、时间线、图表、HTML/VibeMotion/Remotion/AE工程 | `references/motion.md` |
+| 参数、流程、结构、时间线、图表、HTML/VibeMotion/Remotion | `references/motion.md` |
+| AE制作方案、AE工程、MCP/JSX、关键帧/表达式、AE修改/调试/验收 | 转读 `kzz-x/XPIN-AE-SKILL/AGENTS.md`，再按其路由使用 Mini / Full |
 | 封面/缩略图/横竖底图 | `references/cover.md`，需要视觉诊断/构图时再读 `references/visual.md` |
 | 图标、字体、库、组件、成熟资产 | `references/assets.md` |
 | 验收、检查、不好看、工程功能核对 | `references/qa.md` |
@@ -125,7 +129,11 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 
 入口：`展开03` `设计03` `下一镜` `设计封面` `只要提示词`，以及用户一次指定多个镜头进入设计等。
 
-只设计当前对象或明确批次。读取当前能力reference；需要视觉关系时读`visual.md`；指定风格只读对应风格卡。不要为了“全面”把其他能力一起读入。\n\n若当前对象是新视觉、新动效、封面、CGI、复杂产品/结构、类生物动作、机械/物理运动，先按 `references/reference-first.md` 做 Reference Preflight。需要参考时，B阶段可以主动搜索并整理图片、视频、GIF/Lottie、成熟动效案例或可直接复用资产；**找参考属于设计，不等于授权进入C制作**。
+只设计当前对象或明确批次。读取当前能力reference；需要视觉关系时读`visual.md`；指定风格只读对应风格卡。不要为了“全面”把其他能力一起读入。
+
+若当前对象是新视觉、新动效、封面、CGI、复杂产品/结构、类生物动作、机械/物理运动，先按 `references/reference-first.md` 做 Reference Preflight。需要参考时，B阶段可以主动搜索并整理图片、视频、GIF/Lottie、成熟动效案例或可直接复用资产；**找参考属于设计，不等于授权进入C制作**。
+
+如果本镜头最终路线明确为 AE：本 Skill 可完成镜头层面的表达目标、构图、参考、素材和节奏意图；当用户进一步要求“AE怎么做 / AE制作方案 / 直接做AE / JSX / MCP / 改AE工程”时，立即转读 `kzz-x/XPIN-AE-SKILL/AGENTS.md`。交接时把当前镜头卡、已锁定约束、参考和素材需求作为输入，不从零重新设计。
 
 开头给：`依据：实际读取的文件/章节；关键约束：3–5条；本轮交付：…`
 
@@ -137,7 +145,11 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 
 入口：`制作03` `找03素材` `核验这条数据` `生成这版底图` `按方案改图` `直接做`，以及用户明确授权多个镜头/剩余镜头进入制作。
 
-只执行`authorized_scope`。有已确认方案就按该版执行。无方案但用户明确“直接做/无需确认”时，可合并B+C，但必须先公开简短方案和完整Prompt/技术方案，再调用工具。\n\n进入制作前复核关键参考：准确产品/结构、复杂机械、类生物运动、物理现象和明显 Motion 任务不要在缺乏依据时凭空补细节。能直接复用官方素材、SVG、Lottie、视频、3D或模板时优先评估复用；关键参考暂缺则使用明确标注的可替换占位。
+只执行`authorized_scope`。有已确认方案就按该版执行。无方案但用户明确“直接做/无需确认”时，可合并B+C，但必须先公开简短方案和完整Prompt/技术方案，再调用工具。
+
+进入制作前复核关键参考：准确产品/结构、复杂机械、类生物运动、物理现象和明显 Motion 任务不要在缺乏依据时凭空补细节。能直接复用官方素材、SVG、Lottie、视频、3D或模板时优先评估复用；关键参考暂缺则使用明确标注的可替换占位。
+
+若 `authorized_scope` 是 AE 制作/修改，不在本仓继续执行 `references/motion.md` 的工程流程；转读 `kzz-x/XPIN-AE-SKILL/AGENTS.md`，并把本仓已确认的镜头设计与 Reference Brief 作为 AE Skill 的上游约束。
 
 多个已设计且互相独立的镜头可以并行制作；读取 `references/parallel-execution.md`。所有子任务完成后由主Agent统一验收并更新项目状态。
 
