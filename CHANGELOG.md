@@ -1,5 +1,12 @@
 # 更新记录
 
+## v3.0.2 — 2026-09-24
+
+- 新增 **AI 友好运动预算 / Simple Motion First**：AE、Blender、CGI 与程序化动效方案默认先保证模型/场景/构图/材质/灯光，再以固定镜头或单一轻推/轻移/轻绕配合少量持续运动完成表达。
+- 不再为了“高级感”默认设计复杂 Camera choreography、多段连续变形或高难度动作衔接；只有叙事确实不可替代时才升级。
+- 复杂 Motion 必须在方案阶段标记 `AI易失败 / 建议人工接管`，推荐 AI 先搭 Scene / LookDev / Rig / 基础动画，再由人工完成复杂 Camera、主 Graph、Path 与最终节奏。
+- 已同步 `skill/references/motion.md`、`clips.md` 与 GPT Project 镜像；本次为规则更新，未做模型行为回归。
+
 ## v3.0.1 — 2026-09-21
 
 - 【差点封面】新增 **Product Accuracy Lock / 产品真实性锁**：具体品牌/型号封面强制显示 Product Accuracy Status，并贯穿 B0/B1/B2/C/D。
