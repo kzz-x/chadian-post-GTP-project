@@ -10,13 +10,13 @@
 
 ## 阶段与交付
 
-按【差点后期】阶段控制。A/B只基于项目已有资料列选型，不安装库、不写工程、不外搜；用户明确“查这个库/找图标”可执行指定检索。C才核当前API/许可并实际集成。
+按【差点后期】阶段控制。A 只标记资产需求，不外搜。B 设计阶段命中 Asset First 时应主动检索候选资产、核对基本格式/许可并锁定选型，但不安装、不写工程；这属于设计，不等于进入 C。C 才下载/本地化、核当前 API/许可并实际集成。用户明确“不要外搜 / 只按现有资产”时遵从用户要求。
 
 B固定清单：`功能｜成熟资产/库｜为什么适合本镜头｜已有依赖/新增项｜可改参数｜后续验证方式`。C固定交：`实际资产入口/版本/许可｜集成用途｜已实现可改项｜验证结果｜依赖与本地化状态`。不能只列GSAP/D3等名称却交自画临时图标和不可控动画；未使用的库不谎称已集成。
 
 ## 1. 选用原则
 
-AI 优先调成熟资产，不重复造轮子。优先已有工程依赖、官方资源、可直接用的 SVG/源码，再选择新增库；每加一个依赖都说明实际用途。不是必须调用全部目录。
+AI 优先调成熟资产，不重复造轮子。凡有明确语义的图标 / Logo / Animated Icon / Lottie / 通用 3D / HDRI / Texture / 标准符号等，默认先完成 Asset Search，再决定复用、改造、Morph 或自制。优先已有工程依赖、官方资源、可直接用的 SVG/源码，再选择新增库；每加一个依赖都说明实际用途。不是必须调用全部目录。
 
 免费/开源、无需登录、可控制样式且可复用的资产优先，但开源代码许可证不等于其中每个素材或品牌标识的授权。目录是来源整理时的官方入口，使用时核查当前可用性、版本 API 与具体许可，不承诺永久免费或无需注册。
 
@@ -29,8 +29,18 @@ AI 优先调成熟资产，不重复造轮子。优先已有工程依赖、官�
 | Iconify | [iconify.design](https://iconify.design/) | 跨图标集检索；按实际图标 ID 取 SVG/组件，不编名称 |
 | Lucide | [lucide.dev](https://lucide.dev/) | 常用线性 UI/参数图标默认；统一描边与尺寸 |
 | Tabler | [tabler.io/icons](https://tabler.io/icons) | Lucide 缺特定符号时补充；统一线宽避免混风格 |
+| Iconoir | [iconoir.com](https://iconoir.com/) | 干净线性 SVG；适合需要与 Lucide/Tabler 比选的语义图标 |
 | Phosphor | [phosphoricons.com](https://phosphoricons.com/) | 同系列多权重/双色层次；同画面少混权重 |
 | Simple Icons | [simpleicons.org](https://simpleicons.org/) | 品牌 SVG 补充入口；核对当前品牌标识与许可，找不到回官方 |
+| OpenMoji | [openmoji.org](https://openmoji.org/) | 彩色/线性 Emoji 与公共符号；按具体资产许可要求使用 |
+| AnimateIcons | [animateicons.dev](https://animateicons.dev/) | 优先检索现成 animated SVG/icon；有 Agent/MCP/CLI 入口时优先程序化检索 |
+| svg-animated-icons | [github.com/LucasBassetti/svg-animated-icons](https://github.com/LucasBassetti/svg-animated-icons) | Agent 友好的 animated icon 目录，可利用其机器可读清单检索 |
+| Morphicons | [github.com/guillermolg00/morphicons](https://github.com/guillermolg00/morphicons) | stroke icon 之间的 path morph；优先用于状态图标 A→B，而不是 AI 手画中间形态 |
+| 3dicons | [3dicons.co](https://3dicons.co/) | 通用 3D 图标/渲染资产；适合科技解释镜头的现成 3D symbol |
+| OpenSource3DAssets | [github.com/toxsam/open-source-3D-assets](https://github.com/toxsam/open-source-3D-assets) | 结构化 3D registry；优先按 JSON/元数据检索通用 GLB/模型 |
+| Kenney | [kenney.nl/assets](https://kenney.nl/assets) | 大量可复用 2D/3D/game/UI 资产；逐包核对许可 |
+| Poly Haven | [polyhaven.com](https://polyhaven.com/) | HDRI / Texture / Model；优先真实环境光与通用材质 |
+| ambientCG | [ambientcg.com](https://ambientcg.com/) | PBR Texture / Material；按真实材质需求检索 |
 | shadcn/ui | [ui.shadcn.com](https://ui.shadcn.com/) | 已有 React 工程的控制面板、表单、卡片；复制/registry 集成，按当前依赖核查 |
 | Radix | [radix-ui.com](https://www.radix-ui.com/) | 可访问交互基础：滑块、弹层、选择；视觉由工程统一 |
 | Magic UI | [magicui.design](https://magicui.design/) | 找合适的卡片/边框/轻动效实现；提取单一机制，重写视觉 token |
