@@ -19,6 +19,7 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 8. 多个互相独立的镜头在B或C阶段可并行处理；有子Agent/并行任务能力时按 `references/parallel-execution.md` 调度，没有时顺序执行同一批次并保持相同交付契约。
 9. **Search First**：进入具体视觉、动效、封面、CGI、AI片段或复杂元素的 B/C 阶段时，先按 `references/search-first.md` 判断 Truth / Reference / Asset 三种独立 Gate。成熟语义资产、Logo、Animated Icon、3D Model、HDRI/Texture 等命中 Asset First 时必须先搜现成资产；确认无合适结果后才允许自制。A 全文分析仍不外搜。
 10. **AE Handoff**：`差点后期` 只负责判断镜头是否适合 AE、锁定表达目标/构图/参考/素材与阶段状态；一旦用户要求 AE 制作方案、工程搭建、MCP/JSX、关键帧/表达式、AE修改/调试/验收，必须转读 `kzz-x/XPIN-AE-SKILL`，由其中 `AGENTS.md` 路由 Mini / Full。不要用 `references/motion.md` 代替 AE Skill。
+11. **Prompt Freedom**：创作 Prompt 按 Explore → Select → Converge 控制自由度。探索可用 P1 Creative Brief；大多数正式首版默认 P2 Directed Creative；只有设计已收敛后的精确复刻、局部修改、Bug 修复、工程化才用 P3 Execution Spec。不要一开始用长篇逐帧规格锁死 Agent。
 
 ## 运行状态
 
@@ -138,7 +139,7 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 
 开头给：`依据：实际读取的文件/章节；关键约束：3–5条；本轮交付：…`
 
-凡后续涉及生成，B必须交完整、可复制Prompt；不能只写“用016/更高级/科技感”。单镜头交付完停止；多镜头批次可按 `parallel-execution.md` 同步设计，但不得越到C。
+凡后续涉及生成，B必须交完整、可复制Prompt；不能只写“用016/更高级/科技感”。**Prompt Freedom Mode 默认选 P2 Directed Creative**：锁表达目标、视觉方向、主关系、硬约束和验收，但不把无必要的坐标、逐帧时间、施工步骤全部写死。用户明确要测试模型自由创作 / 找惊喜时可切 P1 Creative Brief；方向已完全锁定、只剩精确执行时才切 P3 Execution Spec。单镜头交付完停止；多镜头批次可按 `parallel-execution.md` 同步设计，但不得越到C。
 
 若宿主支持文件，B完成后更新各自 `shots/Sxx.md`、`SHOT_LEDGER.md`、`PROJECT_STATE.md`，并在聊天中暴露本轮变化文件。
 
@@ -146,7 +147,7 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 
 入口：`制作03` `找03素材` `核验这条数据` `生成这版底图` `按方案改图` `直接做`，以及用户明确授权多个镜头/剩余镜头进入制作。
 
-只执行`authorized_scope`。有已确认方案就按该版执行。无方案但用户明确“直接做/无需确认”时，可合并B+C，但必须先公开简短方案和完整Prompt/技术方案，再调用工具。
+只执行`authorized_scope`。有已确认方案就按该版执行。无方案但用户明确“直接做/无需确认”时，可合并B+C，但必须先公开简短方案和完整Prompt/技术方案，再调用工具。**C 首次正式制作默认继续 P2**，保留 Agent 对实现与局部 Motion 的判断；只有要求精确复刻 / 参数锁定 / 工程一致性时升级 P3。
 
 进入制作前复核 Search First 结果：准确产品/结构、复杂机械、类生物运动、物理现象和明显 Motion 任务不要在缺乏依据时凭空补细节；命中 Asset First 的对象若仍为 `UNSEARCHED`，先补搜，不得因为自己画更快就跳过。能直接复用官方素材、SVG、Lottie、Animated Icon、视频、3D、HDRI/Texture 或模板时优先复用；确无合适资产再自制或使用明确标注的可替换占位。
 
@@ -165,7 +166,7 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 
 入口：`检查03` `不好看` `一眼AI` `只改颜色` `按方案改图`。
 
-只有模糊“不好看”时，先给最多3个高影响问题：`具体问题 → 影响 → 可执行改法`，并列保留项/允许修改/禁止修改，然后停止。明确编辑命令时只改指定范围。需要换媒介、核心主体或推翻已确认方向，先说明理由并等待授权。
+只有模糊“不好看”时，先给最多3个高影响问题：`具体问题 → 影响 → 可执行改法`，并列保留项/允许修改/禁止修改，然后停止。明确编辑命令时只改指定范围。 **D 默认使用 P3 Execution Spec**，但只收紧本次失败或修改的维度，不把已经成立的部分重新写成巨型规格。需要换媒介、核心主体或推翻已确认方向，先说明理由并等待授权。
 
 若产生新的长期锁定决策，写入 `DECISIONS.md`；完成修改后更新对应镜头文件、总账和项目状态。
 
