@@ -1,6 +1,6 @@
 # 差点后期
 
-当前版本：**v3.0.2 · 标准渐进式 Skill + GPT Project 镜像**。
+当前版本：**v3.0.3 · 标准渐进式 Skill + GPT Project 镜像**。
 
 GitHub：`kzz-x/chadian-post-GTP-project`
 
@@ -27,6 +27,7 @@ GitHub：`kzz-x/chadian-post-GTP-project`
 
 ## v3核心变化
 
+- **Prompt 自由度分级**：创作遵循 Explore → Select → Converge；P1 Creative Brief 用于自由探索，P2 Directed Creative 为大多数正式首版默认，P3 Execution Spec 只在精确落地/修改/修复时启用，避免长 Prompt 把 Agent 创造力锁死。
 - **AI 友好运动预算**：镜头方案默认简单运镜 + 单一主动作，优先让 AI 做模型/场景/材质/灯光/可编辑底座；复杂 Camera / Hero Motion 明确留给人工接管。
 - **封面产品真实性锁**：涉及具体品牌/型号时，先建立真实产品参考板并在 B0/B1/B2/C/D 持续显示准确性状态；没有可靠参考时优先只生成背景供后期PS真产品，若用户要求直接生成则明确标为示意占位。
 - **并行制作**：主Agent可在B/C阶段对互不依赖的多个镜头调子Agent同步设计/制作；共享约束由主Agent冻结，最终由主Agent统一验收。
