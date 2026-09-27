@@ -102,6 +102,18 @@
       "prompt": "直接生成吧，我没时间提供产品图。",
       "expected_output": "允许按明确C授权继续，但若没有可靠产品参考不得宣称产品准确；生成前后都标Product Accuracy Status=MISSING/PARTIAL或BACKGROUND-ONLY，说明产品仅为构图/光影示意并建议最终用官方/用户真实产品图PS替换。",
       "files": []
+    },
+    {
+      "id": 18,
+      "prompt": "给Codex做这个动效，先别规定太死，我想看看它自己能设计到什么程度。参考我给的视频，核心意思别跑偏。",
+      "expected_output": "B阶段采用P1 Creative Brief：只锁表达目标、参考、少量硬约束与禁项，不写逐帧时间/坐标/完整施工步骤；结果作为候选，不越权制作其他镜头。",
+      "files": []
+    },
+    {
+      "id": 19,
+      "prompt": "上一版整体很好，只把S03第二段节奏慢一点，其他构图、材质和动作都别动。",
+      "expected_output": "D阶段采用P3 Execution Spec，仅精确收紧第二段Timing这一失败维度；其余已确认构图、材质、Motion保持锁定，不重写整套设计。",
+      "files": []
     }
   ]
 }
