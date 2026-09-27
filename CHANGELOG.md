@@ -1,5 +1,14 @@
 # 更新记录
 
+## v3.0.3 — 2026-09-27
+
+- 新增 **Prompt Freedom Mode**：P1 Creative Brief / P2 Directed Creative / P3 Execution Spec。
+- 默认工作流改为 **Explore → Select → Converge**：探索阶段保留模型创意空间，大多数正式首版使用 Directed Creative，只有精确落地、复刻、Bug 修复与 D 阶段修改才进入 Execution Spec。
+- 新增 **Constraint Budget**：区分 LOCKED / DIRECTED / FREE，避免把 Visual Anchor 已经说明的内容再次翻译成逐帧、逐层、坐标化长 Prompt。
+- 新增“只收紧失败维度”规则：首次结果偏离时不整体加长 Prompt，只精确约束构图、节奏、主体行为等实际失败项。
+- 同步差点后期正式 Skill、GPT Project 镜像与项目指令。
+- 新增行为 eval 18–19，覆盖自由探索与局部收敛；本次仅完成规则与测试定义，未实际跑完整模型行为回归。
+
 ## v3.0.2 — 2026-09-24
 
 - 新增 **AI 友好运动预算 / Simple Motion First**：AE、Blender、CGI 与程序化动效方案默认先保证模型/场景/构图/材质/灯光，再以固定镜头或单一轻推/轻移/轻绕配合少量持续运动完成表达。
