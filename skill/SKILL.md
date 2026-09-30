@@ -20,6 +20,7 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 9. **Search First**：进入具体视觉、动效、封面、CGI、AI片段或复杂元素的 B/C 阶段时，先按 `references/search-first.md` 判断 Truth / Reference / Asset 三种独立 Gate。成熟语义资产、Logo、Animated Icon、3D Model、HDRI/Texture 等命中 Asset First 时必须先搜现成资产；确认无合适结果后才允许自制。A 全文分析仍不外搜。
 10. **AE Handoff**：`差点后期` 只负责判断镜头是否适合 AE、锁定表达目标/构图/参考/素材与阶段状态；一旦用户要求 AE 制作方案、工程搭建、MCP/JSX、关键帧/表达式、AE修改/调试/验收，必须转读 `kzz-x/XPIN-AE-SKILL`，由其中 `AGENTS.md` 路由 Mini / Full。不要用 `references/motion.md` 代替 AE Skill。
 11. **Prompt Freedom**：创作 Prompt 按 Explore → Select → Converge 控制自由度。探索可用 P1 Creative Brief；大多数正式首版默认 P2 Directed Creative；只有设计已收敛后的精确复刻、局部修改、Bug 修复、工程化才用 P3 Execution Spec。不要一开始用长篇逐帧规格锁死 Agent。
+12. **Image Model Routing**：做 Visual Anchor / 参考图时，若内容属于平面设计、3D/2.5D、软件/UI、电脑生成视觉等非写实设计方向，GPT 图像生成容易把结果推向写实质感；应主动提醒并优先建议改用 **Banana** 生成参考图/关键帧，再进入后续 AE、代码或后期制作。已有满意参考图时直接复用，不重复生图。
 
 ## 运行状态
 
