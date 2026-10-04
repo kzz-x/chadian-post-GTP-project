@@ -14,6 +14,7 @@ FILE_MAP = {
     "references/elements.md": "来源/【差点元素】.md",
     "references/clips.md": "来源/【差点片段】.md",
     "references/motion.md": "来源/【差点动效】.md",
+    "references/ai-motion-core.md": "来源/【AI动效开发核心经验】.md",
     "references/cover.md": "来源/【差点封面】.md",
     "references/assets.md": "来源/【差点资产】.md",
     "references/qa.md": "来源/【差点质检】.md",
