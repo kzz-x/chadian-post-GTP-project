@@ -21,6 +21,7 @@
 - `elements.md` → `【差点元素】.md`
 - `clips.md` → `【差点片段】.md`
 - `motion.md` → `【差点动效】.md`
+- `ai-motion-core.md` → `【AI动效开发核心经验】.md`
 - `cover.md` → `【差点封面】.md`
 - `assets.md` → `【差点资产】.md`
 - `qa.md` → `【差点质检】.md`
