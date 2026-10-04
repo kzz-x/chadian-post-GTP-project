@@ -51,7 +51,7 @@ description: 差点后期的分阶段硬件/科技视频后期工作流。凡用
 | 真实视频/图片、人物、产品、厂房、发布会、Logo、UI、事实证据 | `references/footage.md` |
 | 独立PNG、芯片、零件、道具、可拆资产 | `references/elements.md` |
 | 完整AI镜头、CGI、锚点、生视频、粗动效重渲染 | `references/clips.md` |
-| 参数、流程、结构、时间线、图表、HTML/VibeMotion/Remotion | `references/motion.md` |
+| 参数、流程、结构、时间线、图表、HTML/VibeMotion/Remotion | `references/motion.md`；复杂三维科普、宏微观连续转场、结构演示或互动 3D 再读 `references/ai-motion-core.md` |
 | AE制作方案、AE工程、MCP/JSX、关键帧/表达式、AE修改/调试/验收 | 转读 `kzz-x/XPIN-AE-SKILL/AGENTS.md`，再按其路由使用 Mini / Full |
 | 封面/缩略图/横竖底图 | `references/cover.md`，需要视觉诊断/构图时再读 `references/visual.md` |
 | 资产源目录、库/API/CLI/MCP 接入方法 | `references/assets.md` |
